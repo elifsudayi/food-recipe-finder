@@ -1,0 +1,20 @@
+# Core
+torch
+torchvision
+numpy
+pandas
+scikit-learn
+matplotlib
+pillow
+tqdm
+# Explainability
+grad-cam
+# NLP / retrieval
+nltk
+sentence-transformers
+# Efficient models
+onnx
+onnxruntime
+# App & model hosting
+gradio
+huggingface_hub

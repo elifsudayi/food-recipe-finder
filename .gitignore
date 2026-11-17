@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+.venv/
+# Large files: do NOT commit (use Hugging Face Hub / Google Drive)
+data/*
+models/*
+!data/.gitkeep
+!models/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.h5
+*.zip
