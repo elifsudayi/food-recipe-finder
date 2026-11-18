@@ -32,11 +32,18 @@ def evaluate(model, loader, device):
             "preds": preds, "targets": targets}
 
 
-def fit(model, loaders, device, epochs, lr, weight_decay, ckpt_path,
-        momentum=0.9, label=""):
-    """Train with SGD + cosine schedule; keep the checkpoint with best val top-1."""
+def fit(model, loaders, device, epochs, lr=None, weight_decay=5e-4, ckpt_path="model.pt",
+        momentum=0.9, label="", param_groups=None):
+    """Train with SGD + cosine schedule; keep the checkpoint with best val top-1.
+
+    Either pass `lr` (all trainable params share it) or `param_groups`
+    (list of {"params": [...], "lr": ...}) for per-group learning rates.
+    Parameters with requires_grad=False are never updated.
+    """
     model.to(device)
-    opt = torch.optim.SGD(model.parameters(), lr=lr, momentum=momentum,
+    if param_groups is None:
+        param_groups = [{"params": [p for p in model.parameters() if p.requires_grad], "lr": lr}]
+    opt = torch.optim.SGD(param_groups, lr=param_groups[0]["lr"], momentum=momentum,
                           weight_decay=weight_decay, nesterov=True)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=epochs)
     crit = nn.CrossEntropyLoss()
