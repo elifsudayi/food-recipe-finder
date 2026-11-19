@@ -1,0 +1,69 @@
+{
+  "model": "tfidf_stem_constraints",
+  "summary": {
+    "MRR": 0.9458333333333334,
+    "Recall@5": 0.8550000000000001,
+    "n_queries": 40
+  },
+  "by_type": {
+    "MRR": {
+      "combo": 1.0,
+      "diet": 1.0,
+      "ingredient": 0.9,
+      "semantic": 0.8833,
+      "time": 1.0
+    },
+    "recall@5": {
+      "combo": 1.0,
+      "diet": 0.95,
+      "ingredient": 0.74,
+      "semantic": 0.78,
+      "time": 0.925
+    }
+  },
+  "size_mb": 0.164714,
+  "latency_cpu_ms": {
+    "mean_ms": 1.2278749950019119,
+    "std_ms": 0.48339033050061003,
+    "runs": 200
+  },
+  "ablation": {
+    "tf-idf (raw tokens)": {
+      "MRR": 0.6282945526695527,
+      "Recall@5": 0.4454166666666667,
+      "n_queries": 40
+    },
+    "+ normalisation & stop-words": {
+      "MRR": 0.5940683621933622,
+      "Recall@5": 0.43916666666666665,
+      "n_queries": 40
+    },
+    "+ stemming": {
+      "MRR": 0.7031351981351982,
+      "Recall@5": 0.5358333333333334,
+      "n_queries": 40
+    },
+    "+ lemmatization": {
+      "MRR": 0.7031351981351982,
+      "Recall@5": 0.5358333333333334,
+      "n_queries": 40
+    },
+    "stemming + constraints [BASELINE]": {
+      "MRR": 0.9458333333333334,
+      "Recall@5": 0.8550000000000001,
+      "n_queries": 40
+    },
+    "lemmatization + constraints": {
+      "MRR": 0.9458333333333334,
+      "Recall@5": 0.8600000000000001,
+      "n_queries": 40
+    }
+  },
+  "constraint_extraction_exact_match": "40/40",
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+    "cpu_count": 2,
+    "gpu": "none",
+    "torch": "2.14.1+cpu"
+  }
+}
