@@ -24,3 +24,6 @@ DISH_NAMES = {
     "pancakes": "pancakes", "omelette": "omelette", "french_fries": "french fries",
     "chicken_curry": "chicken curry",
 }
+
+# Hugging Face Hub model repo that holds the large weights (INT8 ONNX models + fp32 VGG16 for Grad-CAM).
+HF_MODEL_REPO = "elifsudayi/food-recipe-finder-models"
