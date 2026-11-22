@@ -1,0 +1,42 @@
+{
+  "vgg16_feature_extraction_fp32": {
+    "test_top1": 0.8984,
+    "test_top5": 0.9944,
+    "size_mb": 110.272201,
+    "params": 27565386,
+    "latency_cpu_ms": {
+      "mean_ms": 386.5601789699985,
+      "std_ms": 72.51335943084001,
+      "runs": 100
+    }
+  },
+  "vgg16_finetuned_fp32": {
+    "test_top1": 0.9208,
+    "test_top5": 0.9956,
+    "size_mb": 110.272201,
+    "params": 27565386,
+    "latency_cpu_ms": {
+      "mean_ms": 386.5601789699985,
+      "std_ms": 72.51335943084001,
+      "runs": 100
+    }
+  },
+  "class_names": [
+    "caesar_salad",
+    "chicken_curry",
+    "french_fries",
+    "hamburger",
+    "ice_cream",
+    "omelette",
+    "pancakes",
+    "pizza",
+    "spaghetti_carbonara",
+    "sushi"
+  ],
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+    "cpu_count": 2,
+    "gpu": "Tesla T4",
+    "torch": "2.14.1+cu130"
+  }
+}

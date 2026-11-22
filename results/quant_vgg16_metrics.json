@@ -1,0 +1,49 @@
+{
+  "test": {
+    "vgg16_fp32_pytorch": {
+      "top1": 0.9208,
+      "top5": 0.9956
+    },
+    "vgg16_int8_onnx": {
+      "top1": 0.9096,
+      "top5": 0.9928
+    },
+    "int8_fp32_prediction_agreement": 0.9616,
+    "n_test": 2500
+  },
+  "size_mb": {
+    "small_cnn_fp32_pytorch": 1.578261,
+    "vgg16_fp32_pytorch": 110.271689,
+    "vgg16_fp32_onnx": 110.269023,
+    "vgg16_int8_onnx": 27.672997
+  },
+  "latency_cpu_ms": {
+    "small_cnn_fp32_pytorch": {
+      "mean_ms": 12.342348290026166,
+      "std_ms": 1.9698948584561644,
+      "runs": 100
+    },
+    "vgg16_fp32_pytorch": {
+      "mean_ms": 404.7247494899784,
+      "std_ms": 35.01373942716343,
+      "runs": 100
+    },
+    "vgg16_fp32_onnx": {
+      "mean_ms": 338.19072894000783,
+      "std_ms": 24.52834756479773,
+      "runs": 100
+    },
+    "vgg16_int8_onnx": {
+      "mean_ms": 205.3456142899813,
+      "std_ms": 85.11374910860067,
+      "runs": 100
+    }
+  },
+  "calibration": "200 train images (20 per class), MinMax, QDQ, per-channel",
+  "hardware": {
+    "cpu": "AMD EPYC 7B12",
+    "cpu_count": 2,
+    "gpu": "none",
+    "torch": "2.14.1+cpu"
+  }
+}

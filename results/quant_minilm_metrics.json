@@ -1,0 +1,133 @@
+{
+  "retrieval": {
+    "tf-idf stem + constraints": {
+      "MRR": 0.9458333333333334,
+      "Recall@5": 0.8550000000000001,
+      "n_queries": 40
+    },
+    "MiniLM fp32 PyTorch + constraints": {
+      "MRR": 0.9383333333333332,
+      "Recall@5": 0.8829166666666666,
+      "n_queries": 40
+    },
+    "MiniLM fp32 ONNX + constraints": {
+      "MRR": 0.9383333333333332,
+      "Recall@5": 0.8829166666666666,
+      "n_queries": 40
+    },
+    "MiniLM INT8 ONNX + constraints": {
+      "MRR": 0.9508333333333333,
+      "Recall@5": 0.8891666666666665,
+      "n_queries": 40
+    }
+  },
+  "retrieval_by_type": {
+    "tf-idf stem + constraints": {
+      "MRR": {
+        "combo": 1.0,
+        "diet": 1.0,
+        "ingredient": 0.9,
+        "semantic": 0.8833,
+        "time": 1.0
+      },
+      "recall@5": {
+        "combo": 1.0,
+        "diet": 0.95,
+        "ingredient": 0.74,
+        "semantic": 0.78,
+        "time": 0.925
+      }
+    },
+    "MiniLM fp32 PyTorch + constraints": {
+      "MRR": {
+        "combo": 1.0,
+        "diet": 1.0,
+        "ingredient": 0.8033,
+        "semantic": 0.95,
+        "time": 1.0
+      },
+      "recall@5": {
+        "combo": 0.9375,
+        "diet": 0.975,
+        "ingredient": 0.6567,
+        "semantic": 0.94,
+        "time": 0.975
+      }
+    },
+    "MiniLM fp32 ONNX + constraints": {
+      "MRR": {
+        "combo": 1.0,
+        "diet": 1.0,
+        "ingredient": 0.8033,
+        "semantic": 0.95,
+        "time": 1.0
+      },
+      "recall@5": {
+        "combo": 0.9375,
+        "diet": 0.975,
+        "ingredient": 0.6567,
+        "semantic": 0.94,
+        "time": 0.975
+      }
+    },
+    "MiniLM INT8 ONNX + constraints": {
+      "MRR": {
+        "combo": 1.0,
+        "diet": 1.0,
+        "ingredient": 0.8033,
+        "semantic": 1.0,
+        "time": 1.0
+      },
+      "recall@5": {
+        "combo": 1.0,
+        "diet": 0.975,
+        "ingredient": 0.6567,
+        "semantic": 0.92,
+        "time": 1.0
+      }
+    }
+  },
+  "embedding_cosine_vs_pytorch_fp32": {
+    "onnx_fp32_min": 0.9999998211860657,
+    "onnx_int8_mean": 0.9474188089370728,
+    "onnx_int8_min": 0.8973692655563354
+  },
+  "size_mb": {
+    "minilm_fp32_pytorch": 90.893873,
+    "minilm_fp32_onnx": 90.359539,
+    "minilm_int8_onnx": 22.840456
+  },
+  "latency_cpu_ms": {
+    "tfidf_search": {
+      "mean_ms": 1.3747059150000496,
+      "std_ms": 0.628372061624325,
+      "runs": 200
+    },
+    "minilm_fp32_pytorch_encode": {
+      "mean_ms": 20.926434289998497,
+      "std_ms": 4.414478574507141,
+      "runs": 200
+    },
+    "minilm_fp32_onnx_encode": {
+      "mean_ms": 10.431859249998752,
+      "std_ms": 2.527875184204398,
+      "runs": 200
+    },
+    "minilm_int8_onnx_encode": {
+      "mean_ms": 5.399976224999818,
+      "std_ms": 1.3033996730869988,
+      "runs": 200
+    },
+    "minilm_int8_onnx_search": {
+      "mean_ms": 5.626636244998053,
+      "std_ms": 1.2723541899991484,
+      "runs": 200
+    }
+  },
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+    "cpu_count": 2,
+    "gpu": "none",
+    "torch": "2.14.1+cpu"
+  }
+}
